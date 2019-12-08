@@ -22,9 +22,8 @@ const findValidPasswords = (start, end) => {
   const threeConsecutiveMatches = password =>
     password.toString().match(/([0-9])\1\1/g)
 
-  const match2AndNot3 = (match2, match3) => {
-    return match2.filter(match => !match3.includes(`${match}${match.slice(1)}`))
-  }
+  const match2AndNot3 = (match2, match3) =>
+    match2.filter(match => !match3.includes(`${match}${match.slice(1)}`))
 
   const hasNoDecrease = password => {
     return (
